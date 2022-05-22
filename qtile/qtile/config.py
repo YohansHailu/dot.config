@@ -1,14 +1,23 @@
-import subprocess
-from os import path
+# Qtile Config File
+# http://www.qtile.org/
+
+# Antonio Sarosi
+# https://youtube.com/c/antoniosarosi
+# https://github.com/antoniosarosi/dotfiles
+
 
 from libqtile import hook
+
+from settings.keys import mod, keys
 from settings.groups import groups
-from settings.keys import keys, mod
-from settings.layouts import floating_layout, layouts
+from settings.layouts import layouts, floating_layout
+from settings.widgets import widget_defaults, extension_defaults
+from settings.screens import screens
 from settings.mouse import mouse
 from settings.path import qtile_path
-from settings.screens import screens
-from settings.widgets import extension_defaults, widget_defaults
+
+from os import path
+import subprocess
 
 
 @hook.subscribe.startup_once
