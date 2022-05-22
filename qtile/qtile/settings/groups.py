@@ -4,10 +4,10 @@
 
 # Qtile workspaces
 
-from libqtile.config import Key, Group
 from libqtile.command import lazy
-from .keys import mod, keys
+from libqtile.config import Group, Key
 
+from .keys import keys, mod
 
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 # Icons: 

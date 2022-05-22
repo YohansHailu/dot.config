@@ -1,4 +1,5 @@
 from libqtile import widget
+
 from .theme import colors
 
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
@@ -26,9 +27,9 @@ def icon(fg='text', bg='dark', fontsize=16, text="?"):
 def powerline(fg="light", bg="dark"):
     return widget.TextBox(
         **base(fg, bg),
-        text="", # Icon: nf-oct-triangle_left
+        text="|",
         fontsize=37,
-        padding=-2
+        padding=1
     )
 
 
@@ -57,7 +58,7 @@ def workspaces():
             disable_drag=True
         ),
         separator(),
-        widget.WindowName(**base(fg='focus'), fontsize=14, padding=5),
+        widget.WindowName(**base(fg='focus'), fontsize=0, padding=5),
         separator(),
     ]
 
@@ -67,41 +68,20 @@ primary_widgets = [
 
     separator(),
 
-    powerline('color4', 'dark'),
+    powerline(fg="color3"),
+    icon(bg="color1", text=' '),  # Icon: nf-fa-feed
+    widget.Wlan(**base(bg='color1'),interface="wlp4s0", format='{essid} {quality}/70'),
+    widget.Net(**base(bg='color1'), interface='wlp4s0'),
 
-    icon(bg="color4", text=' '), # Icon: nf-fa-download
-    
-    widget.CheckUpdates(
-        background=colors['color4'],
-        colour_have_updates=colors['text'],
-        colour_no_updates=colors['text'],
-        no_update_string='0',
-        display_format='{updates}',
-        update_interval=1800,
-        custom_command='checkupdates',
-    ),
+    powerline(fg="color3"),
+    widget.Volume(**base(bg='color1'),fmt='墳 {}'),
+    widget.Battery(**base(bg='color1'), format=" {percent:2.0%}"),
+    powerline(fg="color3"),
+    widget.CPU(**base(bg='color1'), format=" {load_percent}%"),
+    widget.Memory(**base(bg='color1'), fmt='{}', padding=1, measure_mem='G'),
+    powerline(fg="color3"),
+    widget.Clock(**base(bg='color1'), format="%A, %B %d - %H:%M "),
 
-    powerline('color3', 'color4'),
-
-    icon(bg="color3", text=' '),  # Icon: nf-fa-feed
-    
-    widget.Net(**base(bg='color3'), interface='wlp2s0'),
-
-    powerline('color2', 'color3'),
-
-    widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
-
-    widget.CurrentLayout(**base(bg='color2'), padding=5),
-
-    powerline('color1', 'color2'),
-
-    icon(bg="color1", fontsize=17, text=' '), # Icon: nf-mdi-calendar_clock
-
-    widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
-
-    powerline('dark', 'color1'),
-
-    widget.Systray(background=colors['dark'], padding=5),
 ]
 
 secondary_widgets = [
