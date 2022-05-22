@@ -4,10 +4,10 @@
 
 # Qtile workspaces
 
-from libqtile.config import Key, Group
 from libqtile.command import lazy
-from .keys import mod, keys
+from libqtile.config import Group, Key
 
+from .keys import keys, mod
 
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 # Icons: 
@@ -21,11 +21,13 @@ from .keys import mod, keys
 # nf-mdi-layers
 
 groups = [Group(i) for i in [
-    "   ", "   ", "   ", "   ", "  ", "   ", "   ", "   ", "   ",
+    "   ", " ﬍  ", "   ", "   ", " ",
 ]]
 
+binding = "wlcbs"
+
 for i, group in enumerate(groups):
-    actual_key = str(i + 1)
+    actual_key = str(binding[i])
     keys.extend([
         # Switch to workspace N
         Key([mod], actual_key, lazy.group[group.name].toscreen()),
