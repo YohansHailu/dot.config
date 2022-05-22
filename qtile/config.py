@@ -53,8 +53,8 @@ keys = [
         lazy.spawn("rofi -show run")),
 ]
 
-names = ["code", "www", "book", "leet"] + list('uiop')
-map = "cwbluiop"
+names = [" code", " www", "  book", "﬍ leet"," social" ] + list('uiop')
+map = "cwblsuiop"
 
 groups = [Group(i) for i in names]
 for i in range(len(groups)):
@@ -99,7 +99,7 @@ colors = [["#282c34", "#282c34"],
 
 screens = [
     Screen(
-        bottom=bar.Bar(
+        top = bar.Bar(
             [
 
               widget.GroupBox(
@@ -156,7 +156,7 @@ screens = [
                        fontsize=37
                        ),
               widget.CPU(
-                        format="Cpu {load_percent}%",
+                        format="  {load_percent}%",
                         foreground=colors[5],
                         background=colors[1],
                         update_interval=2,
@@ -194,7 +194,7 @@ screens = [
               widget.Battery(
                        foreground=colors[5],
                        background=colors[1],
-                       format="{percent:2.0%}"
+                       format="  {percent:2.0%}"
                        ),
               widget.TextBox(
                        text='|',
@@ -207,7 +207,7 @@ screens = [
               widget.Volume(
                        foreground=colors[5],
                        background=colors[1],
-                       fmt='Vol: {}',
+                       fmt='墳 {}',
                        padding=0
                        ),
               widget.TextBox(
