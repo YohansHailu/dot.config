@@ -24,7 +24,7 @@ groups = [Group(i) for i in [
     "   ", " ﬍  ", "   ", "   ", " ",
 ]]
 
-binding = ["wlcbs"]
+binding = "wlcbs"
 
 for i, group in enumerate(groups):
     actual_key = str(binding[i])
