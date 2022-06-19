@@ -21,6 +21,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Change window sizes (MonadTall)
     ([mod, "shift"], "l", lazy.layout.grow()),
     ([mod, "shift"], "h", lazy.layout.shrink()),
+    ([mod], "space", lazy.layout.next()),
 
     # Toggle floating
     ([mod, "shift"], "f", lazy.window.toggle_floating()),
@@ -49,13 +50,15 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ App Configs ------------
 
     # Menu
-    ([mod], "d", lazy.spawn("rofi -show drun")),
+    ([mod], "d", lazy.spawn("rofi -show run")),
 
     # Window Nav
     ([mod, "shift"], "d", lazy.spawn("rofi -show")),
 
     # Browser
     ([mod], "b", lazy.spawn("firefox")),
+    ([mod], "p", lazy.spawn("alacritty -e python")),
+    ([mod], "n", lazy.spawn("alacritty -e lvim /home/yohans/nots/plan ")),
 
     # File Explorer
     ([mod], "e", lazy.spawn("pcmanfm")),

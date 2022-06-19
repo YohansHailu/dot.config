@@ -21,10 +21,11 @@ from .keys import keys, mod
 # nf-mdi-layers
 
 groups = [Group(i) for i in [
-    "   ", " ﬍  ", "   ", "   ", " ",
+    "  ", " ﬍ ", "  ", "  ", "  ","  ","  ","  ","  "
 ]]
 
-binding = "wlcbs"
+binding = "wlcbsyuio"
+
 
 for i, group in enumerate(groups):
     actual_key = str(binding[i])

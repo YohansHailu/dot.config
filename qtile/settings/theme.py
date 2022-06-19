@@ -4,15 +4,15 @@
 
 # Theming for Qtile
 
-from os import path
-import subprocess
 import json
+import subprocess
+from os import path
 
 from .path import qtile_path
 
 
 def load_theme():
-    theme = "dark-grey"
+    theme = "onedark"
 
     config = path.join(qtile_path, "config.json")
     if path.isfile(config):
@@ -30,6 +30,6 @@ def load_theme():
     with open(path.join(theme_file)) as f:
         return json.load(f)
 
-
+    
 if __name__ == "settings.theme":
     colors = load_theme()

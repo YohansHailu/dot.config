@@ -6,8 +6,8 @@ from .theme import colors
 
 def base(fg='text', bg='dark'): 
     return {
-        'foreground': colors[fg],
-        'background': colors[bg]
+        'foreground': colors["light"],
+        'background': colors["dark"]
     }
 
 
@@ -67,11 +67,11 @@ primary_widgets = [
     *workspaces(),
 
     separator(),
-
+    
     powerline(fg="color3"),
     icon(bg="color1", text=' '),  # Icon: nf-fa-feed
     widget.Wlan(**base(bg='color1'),interface="wlp4s0", format='{essid} {quality}/70'),
-    widget.Net(**base(bg='color1'), interface='wlp4s0'),
+    #widget.Net(**base(bg='color1'), interface='wlp4s0'),
 
     powerline(fg="color3"),
     widget.Volume(**base(bg='color1'),fmt='墳 {}'),
