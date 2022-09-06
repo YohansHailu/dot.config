@@ -7,7 +7,7 @@ from .theme import colors
 def base(fg='text', bg='dark'): 
     return {
         'foreground': colors["light"],
-        'background': colors["dark"]
+        'background': "#00000000" #colors["dark"]
     }
 
 
@@ -27,9 +27,9 @@ def icon(fg='text', bg='dark', fontsize=16, text="?"):
 def powerline(fg="light", bg="dark"):
     return widget.TextBox(
         **base(fg, bg),
-        text="|",
-        fontsize=37,
-        padding=1
+        text="/",
+        fontsize=20,
+        padding=2
     )
 
 
@@ -39,10 +39,10 @@ def workspaces():
         widget.GroupBox(
             **base(fg='light'),
             font='UbuntuMono Nerd Font',
-            fontsize=19,
+            fontsize=18,
             margin_y=3,
             margin_x=0,
-            padding_y=8,
+            padding_y=10,
             padding_x=5,
             borderwidth=1,
             active=colors['active'],
@@ -67,11 +67,12 @@ primary_widgets = [
     *workspaces(),
 
     separator(),
-    
-    powerline(fg="color3"),
+
+    #powerline(fg="color3"),
     icon(bg="color1", text=' '),  # Icon: nf-fa-feed
     widget.Wlan(**base(bg='color1'),interface="wlp4s0", format='{essid} {quality}/70'),
     #widget.Net(**base(bg='color1'), interface='wlp4s0'),
+
 
     powerline(fg="color3"),
     widget.Volume(**base(bg='color1'),fmt='墳 {}'),
@@ -82,6 +83,8 @@ primary_widgets = [
     powerline(fg="color3"),
     widget.Clock(**base(bg='color1'), format="%A, %B %d - %H:%M "),
 
+    #powerline(fg="color3"),
+    #widget.Pomodoro(color_active=colors["dark"],color_break=colors["dark"],background=colors["dark"],prefix_inactive="start", color_inactive=colors["light"],length_pomodori=25, length_short_break = 7),
 ]
 
 secondary_widgets = [

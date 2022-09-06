@@ -52,19 +52,21 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Menu
     ([mod], "d", lazy.spawn("rofi -show run")),
 
+    #/home/yohans/.config/qtile/wifi_rofi.sh
+
     # Window Nav
-    ([mod, "shift"], "d", lazy.spawn("rofi -show")),
+    ([mod, "shift"], "d", lazy.spawn("/home/yohans/.config/qtile/rofi_wifi_menu.sh")),
 
     # Browser
     ([mod], "b", lazy.spawn("firefox")),
-    ([mod], "p", lazy.spawn("alacritty -e python")),
+    #([mod], "p", lazy.spawn("alacritty -e python")),
     ([mod], "n", lazy.spawn("alacritty -e lvim /home/yohans/nots/plan ")),
 
     # File Explorer
-    ([mod], "e", lazy.spawn("pcmanfm")),
+    #([mod], "e", lazy.spawn("pcmanfm")),
 
     # Terminal
-    ([mod], "Return", lazy.spawn("alacritty")),
+    ([mod], "t", lazy.spawn("alacritty")),
 
     # Redshift
     ([mod], "r", lazy.spawn("redshift -O 2400")),
@@ -83,11 +85,8 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod,"shift"], "v", lazy.spawn(
         "pactl set-sink-volume @DEFAULT_SINK@ -10%"
     )),
-    ([mod], "m", lazy.spawn(
-        "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-    )),
 
     # Brightness
-    ([mod], "x", lazy.spawn("brightnessctl set +10%")),
-    ([mod, "shift"], "x", lazy.spawn("brightnessctl set 10%-")),
+    ([mod], "x", lazy.spawn("brightnessctl set +2%")),
+    ([mod, "shift"], "x", lazy.spawn("brightnessctl set 2%-")),
 ]]

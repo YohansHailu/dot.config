@@ -35,13 +35,10 @@ for i, group in enumerate(groups):
         Key([mod], actual_key, lazy.group[group.name].toscreen()),
         # Send window to workspace N
         Key([mod, "shift"], actual_key, lazy.window.togroup(group.name)),
-        Key([mod],"Return", lazy.group["scratchPad"].dropdown_toggle("term")),
+        Key([mod], "Return", lazy.group["ScratchPad"].dropdown_toggle("term"))
     ])
 
-groups.append(
-    ScratchPad("scratchPad",[
-               DropDown("term","alacritty", opacity=1, height=0.7, width=0.8)
-           ]))
+groups.append(ScratchPad("ScratchPad",[DropDown("term","alacritty", height=1, width=1)]))
 
 
 
